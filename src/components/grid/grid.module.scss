@@ -1,0 +1,14 @@
+.grid {
+  background: #f6f6f6;
+  width: 1240px;
+  padding-bottom: 209px;
+  border-radius: 25px;
+  margin: auto;
+  margin-top: 43px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  // gap: 50px;
+  * {
+    justify-self: center;
+  }
+}
