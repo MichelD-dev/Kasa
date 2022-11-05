@@ -1,6 +1,0 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
-import React from 'react'
-import {render, screen} from '@testing-library/react'
-import App from './App'
-
-test.todo('renders learn react link', () => {})

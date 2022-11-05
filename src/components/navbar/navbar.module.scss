@@ -1,0 +1,19 @@
+.navbar {
+  width: 309px;
+  
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    .link {
+      &:last-child {
+        margin-left: 57px;
+      }
+      * {
+        color: #ff6060;
+        text-decoration: none;
+        font-size: 1.5rem;      }
+    }
+  
+}

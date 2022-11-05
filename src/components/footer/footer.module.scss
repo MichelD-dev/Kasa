@@ -1,0 +1,28 @@
+.footer {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+  height: 209px;
+  img {
+    height: 27.94px;
+    margin-top: 66px;
+    margin-right: 6px;
+    &:first-child {
+      margin-right: 3.5px;
+      height: 36.11px;
+    }
+  }
+  .div {
+    width: 513px;
+    height: 46px;
+    margin: auto;
+    margin-bottom: 29px;
+  }
+  .p {
+    font-size: 1.5rem;
+    color: white;
+  }
+}
