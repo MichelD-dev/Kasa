@@ -2,7 +2,7 @@ import {screen} from '@testing-library/react'
 import renderWithRouter from '../utils/RenderWithRouter'
 import Layout from '../layout/Layout'
 
-test('test UI header', async () => {
+test.skip('test UI header', async () => {
   renderWithRouter(<Layout />)
 
   expect(screen.getByRole('img', {name: /logo de kasa/i})).toBeInTheDocument()
