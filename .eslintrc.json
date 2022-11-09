@@ -24,11 +24,15 @@
     "spaced-comment": "error",
     "quotes": ["error", "single"],
     "no-duplicate-imports": "error",
-    "scss.lint.unknownAtRules": "off"
+    "scss.lint.unknownAtRules": "off",
+    "react/no-unescaped-entities": "off"
   },
   "settings": {
     "import/resolver": {
       "typescript": {}
+    },
+    "react": {
+      "version": "detect"
     }
   }
 }
