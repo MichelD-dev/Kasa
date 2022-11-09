@@ -1,6 +1,26 @@
 .card {
-    width: 340px;
-    aspect-ratio: 1 / 1;
-    background: #ff6060;
-    border-radius: 10px;
+  width: 340px;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  // opacity: 0;
+  // transition: opacity 150ms ease-in;
+  .img {
+    height: 100%;
+  }
+  .title {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    padding: 20px 10px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+.fadein {
+  opacity: 1;
 }
