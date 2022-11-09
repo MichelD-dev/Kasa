@@ -1,14 +1,16 @@
+import {lazy, Suspense} from 'react'
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
 } from 'react-router-dom'
 import Error404 from '../pages/error404/Error404'
-import Home from '../pages/home/Home'
-import About from '../pages/about/About'
-import Lodging from '../pages/lodging/Lodging'
 import Layout from '../layout/Layout'
 import loader from '../utils/api/api'
+
+const Home = lazy(() => import('../pages/home/Home'))
+const About = lazy(() => import('../pages/about/About'))
+const Lodging = lazy(() => import('../pages/lodging/Lodging'))
 
 const lodgingsLoader = () => loader('../data/logements.json', 'lodgings')
 
@@ -17,14 +19,30 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route
         index
-        element={<Home />}
+        element={
+          <Suspense fallback={<p>Loading...</p>}>
+            <Home />
+          </Suspense>
+        }
         loader={lodgingsLoader}
         errorElement={<Error404 />}
       />
-      <Route path="about" element={<About />} errorElement={<Error404 />} />
+      <Route
+        path="about"
+        element={
+          <Suspense fallback={<p>Loading...</p>}>
+            <About />
+          </Suspense>
+        }
+        errorElement={<Error404 />}
+      />
       <Route
         path="lodging/:id"
-        element={<Lodging />}
+        element={
+          <Suspense fallback={<p>Loading...</p>}>
+            <Lodging />
+          </Suspense>
+        }
         loader={lodgingsLoader}
         errorElement={<Error404 />}
       />
