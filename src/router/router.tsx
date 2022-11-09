@@ -10,7 +10,9 @@ import loader from '../utils/api/api'
 
 const Home = lazy(() => import('../pages/home/Home'))
 const About = lazy(() => import('../pages/about/About'))
-const Lodging = lazy(() => import('../pages/lodging/Lodging'))
+const Lodging = lazy(
+  () => import(/* webpackPrefetch: true */ '../pages/lodging/Lodging'),
+)
 
 const lodgingsLoader = () => loader('../data/logements.json', 'lodgings')
 
@@ -19,30 +21,14 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route
         index
-        element={
-          <Suspense fallback={<p>Loading...</p>}>
-            <Home />
-          </Suspense>
-        }
+        element={<Home />}
         loader={lodgingsLoader}
         errorElement={<Error404 />}
       />
-      <Route
-        path="about"
-        element={
-          <Suspense fallback={<p>Loading...</p>}>
-            <About />
-          </Suspense>
-        }
-        errorElement={<Error404 />}
-      />
+      <Route path="about" element={<About />} errorElement={<Error404 />} />
       <Route
         path="lodging/:id"
-        element={
-          <Suspense fallback={<p>Loading...</p>}>
-            <Lodging />
-          </Suspense>
-        }
+        element={<Lodging />}
         loader={lodgingsLoader}
         errorElement={<Error404 />}
       />
