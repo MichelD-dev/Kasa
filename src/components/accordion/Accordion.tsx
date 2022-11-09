@@ -40,7 +40,7 @@ const Accordion = ({
 
 export const AccordionToggle = ({children, ...props}: AccordionItemType) => {
   const {activePanel, handlePanelClick, id} = useAccordion()
-console.log(activePanel)
+// console.log(activePanel)
   return (
     <button
       className={styles.toggle}
