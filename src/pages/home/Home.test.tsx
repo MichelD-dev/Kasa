@@ -15,8 +15,8 @@ test('full app rendering/navigating', async () => {
 test.todo('When user is in /about route then render About component')
 test.todo('When user is in /lodging route then render Lodging component')
 
-test('landing on a bad page', () => {
-  renderWithRouter(<Layout />, {route: '/something-that-does-not-match'})
+// test('landing on a bad page', () => {
+//   renderWithRouter(<Layout />, {route: '/something-that-does-not-match'})
 
-  expect(screen.getByText(/error/i)).toBeInTheDocument()
-})
+//   expect(screen.getByText(/error/i)).toBeInTheDocument()
+// })
