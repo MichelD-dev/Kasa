@@ -1,33 +1,32 @@
+// import {useRef} from 'react'
+// import {useIntersectionObserver} from '../../utils/hooks/intersectionObserver'
+import {useMemo} from 'react'
 import Card from '../card/Card'
 import styles from './grid.module.scss'
 
-interface LodgingType {
-  id: string
-  title: string
-  cover: string
-  pictures: string[]
-  description: string
-  host: {name: string; picture: string}
-  rating: string
-  location: string
-  equipments: string[]
-  tags: string[]
-}
+const Grid = ({lodgings}: {lodgings: LodgingType[]}) => {console.log(performance.now())
+  // const thumbWrapper = useRef<HTMLDivElement | null>(null)
+  // const {isIntersecting} = useIntersectionObserver(thumbWrapper)
 
-const Grid = ({lodgings}: {lodgings: LodgingType[]}) => {
   return (
-    <section className={styles.grid}>
-      {lodgings.length ? (
-        lodgings.map(lodging => (
-          <div key={lodging.id}>
-            <Card lodging={lodging} />
-          </div>
-        ))
-      ) : (
-        <p>No lodgings</p>
-      )}
-      {/* <Card /> */}
-    </section>
+    <div
+    // ref={thumbWrapper}
+    >
+      <section className={styles.grid}>
+        {lodgings.length ? (
+          // isIntersecting &&
+          useMemo(() => {
+            return lodgings.map(lodging => (
+              <div key={lodging.id}>
+                <Card lodging={lodging} />
+              </div>
+            ))
+          }, [lodgings])
+        ) : (
+          <p>No lodgings</p>
+        )}
+      </section>
+    </div>
   )
 }
 
