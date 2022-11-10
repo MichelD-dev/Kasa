@@ -10,12 +10,12 @@ const Accordion = ({
 }: AccordionType) => {
   const [activePanel, setActivePanel] = useState(defaultActivePanel)
 
-  const panel = document.body.querySelector(`#accordion-${id}`)
+  const accordeonBtn = document.body.querySelector(`#accordion-${id}`)
 
   useEffect(() => {
     activePanel
-      ? panel?.setAttribute('open', '')
-      : panel?.removeAttribute('open')
+      ? accordeonBtn?.setAttribute('open', '')
+      : accordeonBtn?.removeAttribute('open')
   }, [activePanel])
 
   const handlePanelClick = (id: string) => {
