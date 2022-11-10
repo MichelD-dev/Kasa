@@ -5,7 +5,6 @@ import styles from './accordion.module.scss'
 const Accordion = ({
   defaultActivePanel = null,
   id,
-  collapsible = false,
   children,
   ...props
 }: AccordionType) => {
@@ -20,13 +19,7 @@ const Accordion = ({
   }, [activePanel])
 
   const handlePanelClick = (id: string) => {
-    let nextActivePanelId: string | null = id
-
-    if (collapsible && nextActivePanelId === activePanel)
-      nextActivePanelId = null
-
-
-    setActivePanel(nextActivePanelId)
+    setActivePanel(activePanel !== id ? id : null)
   }
 
   const value = {

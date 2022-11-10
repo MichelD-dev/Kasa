@@ -25,7 +25,6 @@ interface AccordionContextInterface {
 interface AccordionType {
   defaultActivePanel?: string | null
   children: ReactNode
-  collapsible?: boolean
   id: string
 }
 

@@ -55,11 +55,11 @@ const Lodging = () => {
       </section>
 
       <section className={styles.accordions}>
-        <Accordion id="1" collapsible>
+        <Accordion id="1">
           <AccordionToggle>Description</AccordionToggle>
           <AccordionPanel>{lodging.description}</AccordionPanel>
         </Accordion>
-        <Accordion id="2" collapsible>
+        <Accordion id="2">
           <AccordionToggle>Equipements</AccordionToggle>
           <AccordionPanel>
             <ul>
