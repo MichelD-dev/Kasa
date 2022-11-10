@@ -1,14 +1,18 @@
+import {lazy} from 'react'
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
 } from 'react-router-dom'
 import Error404 from '../pages/error404/Error404'
-import Home from '../pages/home/Home'
-import About from '../pages/about/About'
-import Lodging from '../pages/lodging/Lodging'
 import Layout from '../layout/Layout'
 import loader from '../utils/api/api'
+
+const Home = lazy(() => import('../pages/home/Home'))
+const About = lazy(() => import('../pages/about/About'))
+const Lodging = lazy(
+  () => import(/* webpackPrefetch: true */ '../pages/lodging/Lodging'),
+)
 
 const lodgingsLoader = () => loader('../data/logements.json', 'lodgings')
 
