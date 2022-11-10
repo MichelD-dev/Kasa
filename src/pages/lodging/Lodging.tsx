@@ -46,7 +46,7 @@ const Lodging = () => {
           </div>
           <ul>
             {Array.from(Array(5), (_, i) => (
-              <li key={i}>
+              <li key={`id${i}`}>
                 <Rating fill={i < +lodging.rating ? '#ff6060' : '#E3E3E3'} />
               </li>
             ))}

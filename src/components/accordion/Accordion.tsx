@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import {AccordionContext, useAccordion} from '../../context/AccordionContext'
 import styles from './accordion.module.scss'
 
@@ -11,11 +11,20 @@ const Accordion = ({
 }: AccordionType) => {
   const [activePanel, setActivePanel] = useState(defaultActivePanel)
 
+  const panel = document.body.querySelector(`#accordion-${id}`)
+
+  useEffect(() => {
+    activePanel
+      ? panel?.setAttribute('open', '')
+      : panel?.removeAttribute('open')
+  }, [activePanel])
+
   const handlePanelClick = (id: string) => {
     let nextActivePanelId: string | null = id
 
     if (collapsible && nextActivePanelId === activePanel)
       nextActivePanelId = null
+
 
     setActivePanel(nextActivePanelId)
   }
@@ -37,7 +46,7 @@ const Accordion = ({
 
 export const AccordionToggle = ({children, ...props}: AccordionItemType) => {
   const {activePanel, handlePanelClick, id} = useAccordion()
-  // console.log(activePanel)
+
   return (
     <button
       className={styles.toggle}
@@ -48,11 +57,7 @@ export const AccordionToggle = ({children, ...props}: AccordionItemType) => {
       {...props}
     >
       {children}
-      {/* <span className={styles.arrow}></span> */}
-      {
-        // activePanel === id &&
-        <span className={styles.arrow}></span>
-      }
+      <span className={styles.arrow}></span>
     </button>
   )
 }

@@ -21,12 +21,12 @@
   &[open] {
     & .arrow {
       &::before {
-        left: -3px;
-        transform: rotate(45deg);
-      }
-        &::after {
         left: 6px;
         transform: rotate(-45deg);
+      }
+      &::after {
+        left: -3px;
+        transform: rotate(45deg);
       }
     }
   }
@@ -43,16 +43,16 @@
       bottom: 0px;
       width: 0.2rem;
       height: 100%;
-      transition: all 0.5s;
+      transition: all 0.2s;
     }
     &::before {
-      left: -3px;
-      transform: rotate(- 45deg);
+      left: 6px;
+      transform: rotate(45deg);
       background-color: white;
     }
     &::after {
-      left: 6px;
-      transform: rotate(45deg);
+      left: -3px;
+      transform: rotate(-45deg);
       background-color: white;
     }
   }
