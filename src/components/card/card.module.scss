@@ -4,8 +4,22 @@
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  transition: all 0.3s linear;
+  transform: scale(1);
   // opacity: 0;
   // transition: opacity 150ms ease-in;
+  &:hover,
+  &:focus {
+    transition: all 0.1s linear;
+    transform: scale(1.015);
+    box-shadow: 3px 9px 10px #ddd;
+    opacity: 0.8;
+  }
+  &:active {
+    transform: scale(1);
+    box-shadow: none;
+    transition: all 0.05s linear;
+  }
   .img {
     height: 100%;
   }
