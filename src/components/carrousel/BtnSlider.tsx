@@ -15,7 +15,7 @@ const BtnSlider = ({
       direction === 'next' ? styles.next : styles.prev
     }`}
   >
-    {direction === 'next' ? <img src={rightArrow} /> : <img src={leftArrow} />}
+    {direction === 'next' ? <img src={rightArrow} alt=''/> : <img src={leftArrow} alt=''/>}
   </button>
 )
 

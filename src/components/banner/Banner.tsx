@@ -6,6 +6,8 @@ const Banner = ({bannerURL = '', punchline = ''}: BannerProps) => (
     style={{
       backgroundImage: `url(${bannerURL})`,
     }}
+    role="banner"
+    aria-label="Hero Image"
   >
     {punchline}
   </div>

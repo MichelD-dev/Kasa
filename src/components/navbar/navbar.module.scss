@@ -1,11 +1,13 @@
 @use '../../../partials/utils/variables' as *;
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
   .link {
     &:last-child {
       margin-left: 57px;

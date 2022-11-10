@@ -1,8 +1,5 @@
 import {useState} from 'react'
-import {
-  AccordionContext,
-  useAccordion,
-} from '../../context/AccordionContext'
+import {AccordionContext, useAccordion} from '../../context/AccordionContext'
 import styles from './accordion.module.scss'
 
 const Accordion = ({
@@ -40,18 +37,22 @@ const Accordion = ({
 
 export const AccordionToggle = ({children, ...props}: AccordionItemType) => {
   const {activePanel, handlePanelClick, id} = useAccordion()
-// console.log(activePanel)
+  // console.log(activePanel)
   return (
     <button
       className={styles.toggle}
       onClick={() => handlePanelClick(id)}
+      aria-expanded={!!activePanel}
+      aria-controls={`panel-${id}`}
+      id={`accordion-${id}`}
       {...props}
     >
       {children}
       {/* <span className={styles.arrow}></span> */}
       {
-      // activePanel === id &&
-      <span className={styles.arrow}></span>}
+        // activePanel === id &&
+        <span className={styles.arrow}></span>
+      }
     </button>
   )
 }
@@ -60,7 +61,13 @@ export const AccordionPanel = ({children, ...props}: AccordionItemType) => {
   const {activePanel, id} = useAccordion()
 
   return activePanel === id ? (
-    <div className={styles.panel} {...props}>
+    <div
+      className={styles.panel}
+      {...props}
+      id={`panel-${id}`}
+      role="region"
+      aria-labelledby={`accordion-${id}`}
+    >
       {children}
     </div>
   ) : null
