@@ -7,6 +7,7 @@ import Accordion, {
 import styles from './lodging.module.scss'
 import {ensure} from '../../utils/typeGuards'
 import {ReactComponent as Rating} from '../../assets/icons/rating-star.svg'
+import Tag from '../../components/tag/Tag'
 
 const Lodging = () => {
   const loaderData = useLoaderData() as LodgingType[]
@@ -29,7 +30,7 @@ const Lodging = () => {
           <ul className={styles.tags}>
             {lodging.tags.map(tag => (
               <li key={`${tag}-${lodging.id}`}>
-                <div className={styles.tag}>{tag}</div>
+                <Tag className={styles.tag} text={tag}></Tag>
               </li>
             ))}
           </ul>
