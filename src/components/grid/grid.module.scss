@@ -1,3 +1,5 @@
+@use '../../../partials/utils/mixins.scss' as *;
+
 .grid {
   background: #f6f6f6;
   padding: 50px 25px;
@@ -7,9 +9,15 @@
   margin-top: 43px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  row-gap: 50px;
+  gap: 50px;
   * {
     justify-self: center;
+  }
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 .error {
