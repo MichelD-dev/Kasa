@@ -1,8 +1,7 @@
 import Banner from '../../components/banner/Banner'
-import Accordion, {
-  AccordionToggle,
-  AccordionPanel,
-} from '../../components/accordion/Accordion'
+import Accordion from '../../components/accordion/Accordion'
+import { AccordionPanel } from '../../components/accordion/AccordeonPanel/AccordeonPanel'
+import { AccordionToggle } from '../../components/accordion/AccordeonToggle/AccordeonToggle'
 import styles from './about.module.scss'
 
 const About = () => (

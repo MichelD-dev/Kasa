@@ -6,6 +6,7 @@ export const AccordionContext = createContext<AccordionContextInterface>({
   id: '',
   handlePanelClick: () => {},
 })
+AccordionContext.displayName = 'AccordionContext'
 
 export function useAccordion() {
   const context = useContext(AccordionContext)
