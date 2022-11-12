@@ -11,6 +11,10 @@ interface LodgingType {
   tags: string[]
 }
 
+interface LodgingsType {
+lodgings: LodgingType[]
+}
+
 interface BannerProps {
   bannerURL?: string
   punchline?: string

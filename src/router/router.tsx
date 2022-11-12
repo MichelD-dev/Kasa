@@ -21,7 +21,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route
         index
-        element={<Home />}
+        element={<Home />}      
         loader={lodgingsLoader}
         errorElement={<Error404 />}
       />

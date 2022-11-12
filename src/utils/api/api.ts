@@ -1,4 +1,4 @@
-const loader = async (url: string, element = ''): Promise<LodgingType[]> => {
+const loader = async (url: string, element = ''): Promise<LodgingsType> => {
   const response = await fetch(url)
 
   if (!response.ok) {

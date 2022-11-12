@@ -32,7 +32,9 @@
     "quotes": ["error", "single"],
     "no-duplicate-imports": "error",
     "scss.lint.unknownAtRules": "off",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "settings": {
     "import/resolver": {

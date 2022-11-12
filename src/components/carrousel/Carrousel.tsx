@@ -34,12 +34,15 @@ const Carrousel = ({lodging}: {lodging: LodgingType}) => {
           </div>
         )
       })}
+
       {lodging.pictures.length > 1 && (
         <BtnSlider moveSlide={nextSlide} direction="next" />
       )}
+
       {lodging.pictures.length > 1 && (
         <BtnSlider moveSlide={prevSlide} direction="prev" />
       )}
+      
       <div className={styles.count}>
         <p>{`${slideIndex}/${lodging.pictures.length}`}</p>
       </div>
