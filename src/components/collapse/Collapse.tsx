@@ -1,24 +1,27 @@
 import {useEffect, useRef, useState} from 'react'
-import {AccordionContext} from '../../context/AccordionContext'
-import styles from './accordion.module.scss'
+import {CollapseContext} from '../../context/CollapseContext'
+import styles from './collapse.module.scss'
 
-const Accordion = ({
+const Collapse = ({
   defaultActivePanel = null,
   id,
   children,
   ...props
-}: AccordionType) => {
+}: CollapseType) => {
   const [activePanel, setActivePanel] = useState(defaultActivePanel)
 
   const accordeonToggleRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
+    if (!accordeonToggleRef.current)
+      throw Error('accordeonToggleRef is not assigned')
+
     activePanel
-      ? accordeonToggleRef.current?.setAttribute('open', '')
-      : accordeonToggleRef.current?.removeAttribute('open')
+      ? accordeonToggleRef.current.setAttribute('open', '')
+      : accordeonToggleRef.current.removeAttribute('open')
   }, [activePanel])
 
-  const handlePanelClick = (id: string) => {
+  const handlePanelClick = (id: string): void => {
     setActivePanel(activePanel !== id ? id : null)
   }
 
@@ -30,12 +33,12 @@ const Accordion = ({
   }
 
   return (
-    <AccordionContext.Provider value={value}>
+    <CollapseContext.Provider value={value}>
       <div className={styles.accordion} {...props}>
         {children}
       </div>
-    </AccordionContext.Provider>
+    </CollapseContext.Provider>
   )
 }
 
-export default Accordion
+export default Collapse

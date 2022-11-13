@@ -1,8 +1,8 @@
 import {useLoaderData, useParams} from 'react-router-dom'
 import Carrousel from '../../components/carrousel/Carrousel'
-import Accordion from '../../components/accordion/Accordion'
-import {AccordionToggle} from '../../components/accordion/AccordeonToggle/AccordeonToggle'
-import {AccordionPanel} from '../../components/accordion/AccordeonPanel/AccordeonPanel'
+import Collapse from '../../components/collapse/Collapse'
+import {CollapseToggle} from '../../components/collapse/CollapseToggle/CollapseToggle'
+import {CollapsePanel} from '../../components/collapse/CollapsePanel/CollapsePanel'
 import Tag from '../../components/tag/Tag'
 import {ReactComponent as Rating} from '../../assets/icons/rating-star.svg'
 import {ensure} from '../../utils/typeGuards'
@@ -66,13 +66,13 @@ const Lodging = () => {
       </section>
 
       <section className={styles.accordions}>
-        <Accordion id="1">
-          <AccordionToggle>Description</AccordionToggle>
-          <AccordionPanel>{lodging.description}</AccordionPanel>
-        </Accordion>
-        <Accordion id="2">
-          <AccordionToggle>Equipements</AccordionToggle>
-          <AccordionPanel>
+        <Collapse id="1">
+          <CollapseToggle>Description</CollapseToggle>
+          <CollapsePanel>{lodging.description}</CollapsePanel>
+        </Collapse>
+        <Collapse id="2">
+          <CollapseToggle>Equipements</CollapseToggle>
+          <CollapsePanel>
             <List
               data={loaderData[lodgingIndex].equipments}
               renderItem={item => <>{item}</>}
@@ -82,8 +82,8 @@ const Lodging = () => {
                 <li key={`${equipment}-${lodging.id}`}>{equipment}</li>
               ))}
             </ul> */}
-          </AccordionPanel>
-        </Accordion>
+          </CollapsePanel>
+        </Collapse>
       </section>
     </>
   )

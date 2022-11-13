@@ -1,8 +1,8 @@
-import {useAccordion} from '../../../context/AccordionContext'
-import styles from '../accordion.module.scss'
+import {useCollapse} from '../../../context/CollapseContext'
+import styles from '../collapse.module.scss'
 
-export const AccordionToggle = ({children, ...props}: AccordionItemType) => {
-  const {activePanel, handlePanelClick, id, accordeonToggleRef} = useAccordion()
+export const CollapseToggle = ({children, ...props}: CollapseItemType) => {
+  const {activePanel, handlePanelClick, id, accordeonToggleRef} = useCollapse()
 
   return (
     <button

@@ -1,8 +1,8 @@
-import {useAccordion} from '../../../context/AccordionContext'
-import styles from '../accordion.module.scss'
+import {useCollapse} from '../../../context/CollapseContext'
+import styles from '../collapse.module.scss'
 
-export const AccordionPanel = ({children, ...props}: AccordionItemType) => {
-  const {activePanel, id} = useAccordion()
+export const CollapsePanel = ({children, ...props}: CollapseItemType) => {
+  const {activePanel, id} = useCollapse()
 
   return activePanel === id ? (
     <div

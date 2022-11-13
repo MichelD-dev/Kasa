@@ -12,7 +12,7 @@ interface LodgingType {
 }
 
 interface LodgingsType {
-lodgings: LodgingType[]
+  lodgings: LodgingType[]
 }
 
 interface BannerProps {
@@ -20,19 +20,19 @@ interface BannerProps {
   punchline?: string
 }
 
-interface AccordionContextInterface {
+interface CollapseContextInterface {
   activePanel: string | null
   handlePanelClick: (id: string) => void
   id: string
-  accordeonToggleRef: LegacyRef<HTMLButtonElement> | null 
+  accordeonToggleRef: RefObject<HTMLButtonElement>
 }
 
-interface AccordionType {
+interface CollapseItemType {
+  children: ReactNode
+}
+
+interface CollapseType {
   defaultActivePanel?: string | null
   children: ReactNode
   id: string
-}
-
-interface AccordionItemType {
-  children: ReactNode
 }
