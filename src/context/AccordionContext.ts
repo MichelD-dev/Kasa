@@ -5,6 +5,7 @@ export const AccordionContext = createContext<AccordionContextInterface>({
   activePanel: '',
   id: '',
   handlePanelClick: () => {},
+  accordeonToggleRef: null,
 })
 AccordionContext.displayName = 'AccordionContext'
 

@@ -2,7 +2,7 @@ import {useAccordion} from '../../../context/AccordionContext'
 import styles from '../accordion.module.scss'
 
 export const AccordionToggle = ({children, ...props}: AccordionItemType) => {
-  const {activePanel, handlePanelClick, id} = useAccordion()
+  const {activePanel, handlePanelClick, id, accordeonToggleRef} = useAccordion()
 
   return (
     <button
@@ -11,6 +11,7 @@ export const AccordionToggle = ({children, ...props}: AccordionItemType) => {
       aria-expanded={!!activePanel}
       aria-controls={`panel-${id}`}
       id={`accordion-${id}`}
+      ref={accordeonToggleRef}
       {...props}
     >
       {children}

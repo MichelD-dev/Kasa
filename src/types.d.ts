@@ -24,6 +24,7 @@ interface AccordionContextInterface {
   activePanel: string | null
   handlePanelClick: (id: string) => void
   id: string
+  accordeonToggleRef: LegacyRef<HTMLButtonElement> | null 
 }
 
 interface AccordionType {

@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useRef, useState} from 'react'
 import {AccordionContext} from '../../context/AccordionContext'
 import styles from './accordion.module.scss'
 
@@ -10,19 +10,20 @@ const Accordion = ({
 }: AccordionType) => {
   const [activePanel, setActivePanel] = useState(defaultActivePanel)
 
-  const accordeonBtn = document.body.querySelector(`#accordion-${id}`)
+  const accordeonToggleRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     activePanel
-      ? accordeonBtn?.setAttribute('open', '')
-      : accordeonBtn?.removeAttribute('open')
-  }, [accordeonBtn, activePanel])
+      ? accordeonToggleRef.current?.setAttribute('open', '')
+      : accordeonToggleRef.current?.removeAttribute('open')
+  }, [activePanel])
 
   const handlePanelClick = (id: string) => {
     setActivePanel(activePanel !== id ? id : null)
   }
 
   const value = {
+    accordeonToggleRef,
     activePanel,
     handlePanelClick,
     id,
