@@ -5,19 +5,13 @@ import styles from './carrousel.module.scss'
 const Carrousel = ({lodging}: {lodging: LodgingType}) => {
   const [slideIndex, setSlideIndex] = useState(1)
 
-  const nextSlide = () => {
-    if (slideIndex !== lodging.pictures.length) {
-      setSlideIndex(slideIndex => slideIndex + 1)
-    } else if (slideIndex === lodging.pictures.length) {
-      setSlideIndex(1)
-    }
+  const nextSlide = (): void => {
+    slideIndex !== lodging.pictures.length
+      ? setSlideIndex(slideIndex => slideIndex + 1)
+      : setSlideIndex(1)
   }
-  const prevSlide = () => {
-    if (slideIndex !== 1) {
-      setSlideIndex(slideIndex => slideIndex - 1)
-    } else if (slideIndex === 1) {
-      setSlideIndex(lodging.pictures.length)
-    }
+  const prevSlide = (): void => {
+    slideIndex !== 1 ? slideIndex === 1 : setSlideIndex(lodging.pictures.length)
   }
 
   return (
@@ -42,7 +36,7 @@ const Carrousel = ({lodging}: {lodging: LodgingType}) => {
       {lodging.pictures.length > 1 && (
         <BtnSlider moveSlide={prevSlide} direction="prev" />
       )}
-      
+
       <div className={styles.count}>
         <p>{`${slideIndex}/${lodging.pictures.length}`}</p>
       </div>

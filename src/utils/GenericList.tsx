@@ -17,12 +17,7 @@ const List = <T extends unknown>({
   return (
     <ul className={className}>
       {data.map((item, id) => (
-        <li
-          key={keyExtractor(item) || `${item}-${id}`}
-          className={`styles${item}`}
-        >
-          {renderItem(item)}
-        </li>
+        <li key={keyExtractor(item) || `${item}-${id}`}>{renderItem(item)}</li>
       ))}
     </ul>
   )
