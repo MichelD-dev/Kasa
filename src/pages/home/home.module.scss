@@ -1,10 +1,10 @@
 @use '../../../partials/utils/variables' as *;
 
-.error {
+.loadingText {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30%;
-  font-size: 2rem;
+  margin-top: 15%;
+  font-size: 1.5rem;
   color: $primary-color;
 }

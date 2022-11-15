@@ -59,19 +59,31 @@
     align-items: center;
   }
 }
+
 .collapses {
   display: flex;
   justify-content: space-between;
   gap: 76px;
 }
+
 .host {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .hostImg {
   width: 64px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   background-size: contain;
+}
+
+.loadingText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30%;
+  font-size: 1.5rem;
+  color: $primary-color;
 }

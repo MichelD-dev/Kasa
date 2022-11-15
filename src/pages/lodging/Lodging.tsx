@@ -1,30 +1,47 @@
-import {useLoaderData, useParams} from 'react-router-dom'
+import {Suspense} from 'react'
+import {Await, useAsyncValue, useLoaderData, useParams} from 'react-router-dom'
+import {ReactComponent as Rating} from '../../assets/icons/rating-star.svg'
 import Carrousel from '../../components/carrousel/Carrousel'
 import Collapse from '../../components/collapse/Collapse'
 import {CollapseToggle} from '../../components/collapse/CollapseToggle/CollapseToggle'
 import {CollapsePanel} from '../../components/collapse/CollapsePanel/CollapsePanel'
 import Tag from '../../components/tag/Tag'
-import {ReactComponent as Rating} from '../../assets/icons/rating-star.svg'
+import List from '../../utils/GenericList'
+import Error404 from '../error404/Error404'
 import {ensure} from '../../utils/typeGuards'
 import styles from './lodging.module.scss'
-import List from '../../utils/GenericList'
 
 const Lodging = () => {
-  const loaderData = useLoaderData() as LodgingType[]
+  const loaderData = useLoaderData() as LodgingsType
+
+  return (
+      <Suspense
+        fallback={
+          <section className={styles.loadingText}>
+            <p>Loading data...</p>
+          </section>
+        }
+      >
+        <Await resolve={loaderData.lodgings} errorElement={<Error404 />}>
+          <LodgingSection />
+        </Await>
+      </Suspense>
+  )
+}
+
+const LodgingSection = () => {
+  const lodgings = useAsyncValue() as LodgingType[]
   const {id} = useParams()
 
   const lodging = ensure(
     // Type guard au cas où lodging est undefined
-    loaderData.find(obj => obj.id === id),
+    lodgings.find(obj => obj.id === id),
     'No lodging has been found',
   )
-
-  const lodgingIndex = loaderData.indexOf(lodging)
 
   return (
     <>
       <Carrousel lodging={lodging} />
-
       <section className={styles.infos}>
         <section className={styles.infosLeft}>
           <h1>{lodging.title}</h1>
@@ -35,13 +52,13 @@ const Lodging = () => {
             renderItem={tag => <Tag className={styles.tag} text={tag}></Tag>}
           />
           {/* <ul className={styles.tags}>
-            {lodging.tags.map(tag => (
-              <li key={`${tag}-${lodging.id}`}>
-                <Tag className={styles.tag} text={tag}></Tag>
-              </li>
-            ))} 
-          </ul>
-            */}
+      {lodging.tags.map(tag => (
+        <li key={`${tag}-${lodging.id}`}>
+          <Tag className={styles.tag} text={tag}></Tag>
+        </li>
+      ))} 
+    </ul>
+      */}
         </section>
         <section className={styles.infosRight}>
           <div className={styles.host}>
@@ -64,7 +81,6 @@ const Lodging = () => {
           </ul>
         </section>
       </section>
-
       <section className={styles.collapses}>
         <Collapse id="1">
           <CollapseToggle>Description</CollapseToggle>
@@ -73,15 +89,12 @@ const Lodging = () => {
         <Collapse id="2">
           <CollapseToggle>Equipements</CollapseToggle>
           <CollapsePanel>
-            <List
-              data={loaderData[lodgingIndex].equipments}
-              renderItem={item => <>{item}</>}
-            />
+            <List data={lodging.equipments} renderItem={item => <>{item}</>} />
             {/* <ul>
-              {lodging.equipments.map(equipment => (
-                <li key={`${equipment}-${lodging.id}`}>{equipment}</li>
-              ))}
-            </ul> */}
+        {lodging.equipments.map(equipment => (
+          <li key={`${equipment}-${lodging.id}`}>{equipment}</li>
+        ))}
+      </ul> */}
           </CollapsePanel>
         </Collapse>
       </section>
