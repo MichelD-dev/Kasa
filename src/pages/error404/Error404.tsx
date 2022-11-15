@@ -3,7 +3,7 @@ import { Link, useRouteError } from 'react-router-dom'
 import styles from './error404.module.scss'
 
 const Error = () => {
-  const error = useRouteError();
+  const error = useRouteError()
   console.error(error);
 
   return (

@@ -1,17 +1,18 @@
 import {useState} from 'react'
 import BtnSlider from './BtnSlider'
+import {LodgingType} from '../../types'
 import styles from './carrousel.module.scss'
 
 const Carrousel = ({lodging}: {lodging: LodgingType}) => {
   const [slideIndex, setSlideIndex] = useState(1)
 
-  const nextSlide = (): void => {
+  const nextSlide = () => {
     slideIndex !== lodging.pictures.length
       ? setSlideIndex(slideIndex => slideIndex + 1)
       : setSlideIndex(1)
   }
-  const prevSlide = (): void => {
-    slideIndex !== 1 ? slideIndex === 1 : setSlideIndex(lodging.pictures.length)
+  const prevSlide = () => {
+    setSlideIndex(slideIndex !== 1 ? 1 : lodging.pictures.length)
   }
 
   return (
