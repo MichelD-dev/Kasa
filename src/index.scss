@@ -2,3 +2,21 @@
 
 @use './partials/base/reset';
 @use './layout/layout.module.scss';
+
+// Suppression de la scrollbar
+
+/* Chrome, Safari, Opera et autres WebKit-based browsers */
+body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* IE et Edge */
+  body {
+    -ms-overflow-style: none;
+  }
+  
+  /* Firefox */
+  html {
+    scrollbar-width: none;
+  }
+  
