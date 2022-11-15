@@ -16,15 +16,15 @@ interface LodgingsType {
 }
 
 interface BannerProps {
-  bannerURL?: string
-  punchline?: string
+  bannerImgURL?: string
+  punchline?: ReactNode
 }
 
 interface CollapseContextInterface {
   activePanel: string | null
   handlePanelClick: (id: string) => void
   id: string
-  accordeonToggleRef: RefObject<HTMLButtonElement>
+  collapseToggleRef: RefObject<HTMLButtonElement>
 }
 
 interface CollapseItemType {

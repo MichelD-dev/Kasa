@@ -1,4 +1,3 @@
-import {BannerProps} from '../../types'
 import styles from './banner.module.scss'
 
 const Banner = ({bannerImgURL = '', punchline = '', ...props}: BannerProps) => (

@@ -2,7 +2,6 @@
 // import {useIntersectionObserver} from '../../utils/hooks/intersectionObserver'
 import {useMemo} from 'react'
 import Card from '../card/Card'
-import {LodgingsType} from '../../types'
 import styles from './grid.module.scss'
 
 const Grid = ({lodgings}: LodgingsType) => {

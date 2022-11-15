@@ -1,5 +1,4 @@
 import {useCollapseContext} from '../../../context/CollapseContext'
-import {CollapseItemType} from '../../../types'
 import styles from '../collapse.module.scss'
 
 export const CollapsePanel = ({children, ...props}: CollapseItemType) => {

@@ -1,6 +1,5 @@
 import {useState} from 'react'
 import BtnSlider from './BtnSlider'
-import {LodgingType} from '../../types'
 import styles from './carrousel.module.scss'
 
 const Carrousel = ({lodging}: {lodging: LodgingType}) => {

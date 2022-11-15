@@ -1,0 +1,10 @@
+@use '../../../partials/utils/variables' as *;
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30%;
+  font-size: 2rem;
+  color: $primary-color;
+}

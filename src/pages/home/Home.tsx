@@ -1,7 +1,6 @@
 import {useLoaderData} from 'react-router-dom'
 import Banner from '../../components/banner/Banner'
 import Grid from '../../components/grid/Grid'
-import {LodgingType} from '../../types'
 
 const Home = () => {
   const loaderData = useLoaderData() as LodgingType[]

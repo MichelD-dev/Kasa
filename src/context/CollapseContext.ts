@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import {createContext, useContext} from 'react'
-import {CollapseContextInterface} from '../types'
 
 export const CollapseContext = createContext<CollapseContextInterface>({
   activePanel: '',

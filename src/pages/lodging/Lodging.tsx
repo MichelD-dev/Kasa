@@ -8,7 +8,6 @@ import {ReactComponent as Rating} from '../../assets/icons/rating-star.svg'
 import {ensure} from '../../utils/typeGuards'
 import styles from './lodging.module.scss'
 import List from '../../utils/GenericList'
-import { LodgingType } from '../../types'
 
 const Lodging = () => {
   const loaderData = useLoaderData() as LodgingType[]
