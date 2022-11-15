@@ -1,15 +1,15 @@
-import { InputHTMLAttributes } from 'react'
-import { BannerProps } from '../../types'
+import {BannerProps} from '../../types'
 import styles from './banner.module.scss'
 
-const Banner = ({bannerURL = '', punchline = '', ...props }: BannerProps & InputHTMLAttributes<HTMLElement>) => (
+const Banner = ({bannerImgURL = '', punchline = '', ...props}: BannerProps) => (
   <div
-    className={`${styles.banner } ${props.className}`}
+    className={styles.banner}
     style={{
-      backgroundImage: `url(${bannerURL})`,
+      backgroundImage: `url(${bannerImgURL})`,
     }}
     role="banner"
     aria-label="Hero Image"
+    {...props}
   >
     {punchline}
   </div>
