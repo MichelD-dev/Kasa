@@ -2,6 +2,7 @@
 // import {useIntersectionObserver} from '../../utils/hooks/intersectionObserver'
 import {useMemo} from 'react'
 import Card from '../card/Card'
+import {LodgingsType} from '../../types'
 import styles from './grid.module.scss'
 
 const Grid = ({lodgings}: LodgingsType) => {
@@ -10,26 +11,21 @@ const Grid = ({lodgings}: LodgingsType) => {
   // const {isIntersecting} = useIntersectionObserver(thumbWrapper)
 
   return (
-    <div
     // ref={thumbWrapper}
-    >
-      <section className={styles.grid}>
-        {
-          useMemo(() => {
-            // isIntersecting &&
-            return lodgings.length ? (
-              lodgings.map(lodging => (
-                <div key={lodging.id}>
-                  <Card lodging={lodging} />
-                </div>
-              ))
-            ) : (
-              <p>No lodgings</p>
-            )
-          }, [lodgings])
-        }
-      </section>
-    </div>
+    <section className={styles.grid}>
+      {useMemo(() => {
+        // isIntersecting &&
+        return lodgings.length ? (
+          lodgings.map(lodging => (
+            <div key={lodging.id}>
+              <Card lodging={lodging} />
+            </div>
+          ))
+        ) : (
+          <p>No lodgings</p>
+        )
+      }, [lodgings])}
+    </section>
   )
 }
 

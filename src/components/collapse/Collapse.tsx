@@ -1,5 +1,6 @@
 import {useEffect, useRef, useState} from 'react'
 import {CollapseContext} from '../../context/CollapseContext'
+import {CollapseType} from '../../types'
 import styles from './collapse.module.scss'
 
 const Collapse = ({
@@ -10,23 +11,23 @@ const Collapse = ({
 }: CollapseType) => {
   const [activePanel, setActivePanel] = useState(defaultActivePanel)
 
-  const accordeonToggleRef = useRef<HTMLButtonElement>(null)
+  const collapseToggleRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
-    if (!accordeonToggleRef.current)
-      throw Error('accordeonToggleRef is not assigned')
+    if (!collapseToggleRef.current)
+      throw Error('collapseToggleRef is not assigned')
 
     activePanel
-      ? accordeonToggleRef.current.setAttribute('open', '')
-      : accordeonToggleRef.current.removeAttribute('open')
+      ? collapseToggleRef.current.setAttribute('open', '')
+      : collapseToggleRef.current.removeAttribute('open')
   }, [activePanel])
 
-  const handlePanelClick = (id: string): void => {
+  const handlePanelClick = (id: string) => {
     setActivePanel(activePanel !== id ? id : null)
   }
 
   const value = {
-    accordeonToggleRef,
+    collapseToggleRef,
     activePanel,
     handlePanelClick,
     id,
@@ -34,7 +35,7 @@ const Collapse = ({
 
   return (
     <CollapseContext.Provider value={value}>
-      <div className={styles.accordion} {...props}>
+      <div className={styles.collapse} {...props}>
         {children}
       </div>
     </CollapseContext.Provider>

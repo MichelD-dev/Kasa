@@ -1,8 +1,9 @@
-import {useCollapse} from '../../../context/CollapseContext'
+import {useCollapseContext} from '../../../context/CollapseContext'
+import {CollapseItemType} from '../../../types'
 import styles from '../collapse.module.scss'
 
 export const CollapseToggle = ({children, ...props}: CollapseItemType) => {
-  const {activePanel, handlePanelClick, id, accordeonToggleRef} = useCollapse()
+  const {activePanel, handlePanelClick, id, collapseToggleRef} = useCollapseContext()
 
   return (
     <button
@@ -10,8 +11,8 @@ export const CollapseToggle = ({children, ...props}: CollapseItemType) => {
       onClick={() => handlePanelClick(id)}
       aria-expanded={!!activePanel}
       aria-controls={`panel-${id}`}
-      id={`accordion-${id}`}
-      ref={accordeonToggleRef}
+      id={`collapse-${id}`}
+      ref={collapseToggleRef}
       {...props}
     >
       {children}

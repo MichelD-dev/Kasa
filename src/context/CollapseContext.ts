@@ -1,19 +1,20 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import {createContext, useContext} from 'react'
+import {CollapseContextInterface} from '../types'
 
 export const CollapseContext = createContext<CollapseContextInterface>({
   activePanel: '',
   id: '',
   handlePanelClick: () => {},
-  accordeonToggleRef: null,
+  collapseToggleRef: null,
 })
 CollapseContext.displayName = 'CollapseContext'
 
-export function useCollapse() {
+export function useCollapseContext() {
   const context = useContext(CollapseContext)
 
   if (context === undefined) {
-    throw new Error('useCollapse must be used within a <Collapse />')
+    throw new Error('useCollapseContext must be used within a <Collapse />')
   }
   return context
 }
