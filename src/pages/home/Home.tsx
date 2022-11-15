@@ -15,8 +15,7 @@ const Home = () => {
 
     return (
       <>
-        {/* {punchlineText} */}
-        {`${text.at(0)},  `}
+        {`${text.at(0)},`}&nbsp;
         <span>{text.at(1)}</span>
       </>
     )

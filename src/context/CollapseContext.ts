@@ -7,6 +7,7 @@ export const CollapseContext = createContext<CollapseContextInterface>({
   handlePanelClick: () => {},
   collapseToggleRef: null,
 })
+
 CollapseContext.displayName = 'CollapseContext'
 
 export function useCollapseContext() {

@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'
 import Error404 from '../pages/error404/Error404'
 import Layout from '../layout/Layout'
-import loader from '../utils/api/api'
+import loader from '../api/api'
 
 const Home = lazy(() => import('../pages/home/Home'))
 const About = lazy(() => import('../pages/about/About'))

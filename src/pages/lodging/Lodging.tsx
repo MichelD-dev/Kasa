@@ -15,17 +15,17 @@ const Lodging = () => {
   const loaderData = useLoaderData() as LodgingsType
 
   return (
-      <Suspense
-        fallback={
-          <section className={styles.loadingText}>
-            <p>Loading data...</p>
-          </section>
-        }
-      >
-        <Await resolve={loaderData.lodgings} errorElement={<Error404 />}>
-          <LodgingSection />
-        </Await>
-      </Suspense>
+    <Suspense
+      fallback={
+        <section className={styles.loadingText}>
+          <p>Loading data...</p>
+        </section>
+      }
+    >
+      <Await resolve={loaderData.lodgings} errorElement={<Error404 />}>
+        <LodgingSection />
+      </Await>
+    </Suspense>
   )
 }
 
@@ -51,14 +51,6 @@ const LodgingSection = () => {
             className={styles.tags}
             renderItem={tag => <Tag className={styles.tag} text={tag}></Tag>}
           />
-          {/* <ul className={styles.tags}>
-      {lodging.tags.map(tag => (
-        <li key={`${tag}-${lodging.id}`}>
-          <Tag className={styles.tag} text={tag}></Tag>
-        </li>
-      ))} 
-    </ul>
-      */}
         </section>
         <section className={styles.infosRight}>
           <div className={styles.host}>
@@ -90,11 +82,6 @@ const LodgingSection = () => {
           <CollapseToggle>Equipements</CollapseToggle>
           <CollapsePanel>
             <List data={lodging.equipments} renderItem={item => <>{item}</>} />
-            {/* <ul>
-        {lodging.equipments.map(equipment => (
-          <li key={`${equipment}-${lodging.id}`}>{equipment}</li>
-        ))}
-      </ul> */}
           </CollapsePanel>
         </Collapse>
       </section>
