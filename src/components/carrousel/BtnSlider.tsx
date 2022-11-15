@@ -1,5 +1,6 @@
 import leftArrow from '../../assets/icons/left-chevron.svg'
 import rightArrow from '../../assets/icons/right-chevron.svg'
+import Input from '../../utils/GenericInput'
 import styles from './carrousel.module.scss'
 
 const BtnSlider = ({
@@ -10,15 +11,16 @@ const BtnSlider = ({
   direction: string
   moveSlide: () => void
 }) => (
-  <button
+  <Input
+    type="image"
     onClick={moveSlide}
     className={`${styles.btnSlide} ${
       direction === 'next' ? styles.next : styles.prev
     }`}
+    src={direction === 'next' ? rightArrow : leftArrow}
+    alt=""
     {...props}
-  >
-    {direction === 'next' ? <img src={rightArrow} alt=''/> : <img src={leftArrow} alt=''/>}
-  </button>
+  ></Input>
 )
 
 export default BtnSlider
