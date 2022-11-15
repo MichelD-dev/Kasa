@@ -1,4 +1,5 @@
 @use '../../../partials/utils/variables' as *;
+@use '../../../partials/utils/mixins' as *;
 
 .infos {
   display: flex;
@@ -6,7 +7,14 @@
   font-size: 1.125rem;
   justify-content: space-between;
   margin-top: 10px;
-  width: 1240px;
+  width: 100%;
+  @include mobile {
+    flex-direction: column;
+    align-items: start;
+    max-width: 1240px;
+    width: 100%;
+    margin-top: 0;
+  }
   .infosLeft {
     display: flex;
     flex-direction: column;
@@ -24,6 +32,13 @@
     margin: 15px 0;
     ul {
       display: flex;
+    }
+    @include mobile {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 0 0 30px;
     }
   }
   .tags {

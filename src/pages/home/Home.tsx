@@ -2,7 +2,6 @@ import {useLoaderData} from 'react-router-dom'
 import Banner from '../../components/banner/Banner'
 import Grid from '../../components/grid/Grid'
 import {LodgingType} from '../../types'
-import styles from './home.module.scss'
 
 const Home = () => {
   const loaderData = useLoaderData() as LodgingType[]

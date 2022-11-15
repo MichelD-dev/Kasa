@@ -1,3 +1,5 @@
+@use '../../../partials/utils/mixins' as *;
+
 .footer {
   background-color: black;
   position: absolute;
@@ -9,7 +11,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-    .logo {
+  .logo {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -34,5 +36,8 @@
   .p {
     font-size: 1.5rem;
     color: white;
+    @include mobile {
+      font-size: 1rem;
+    }
   }
 }
