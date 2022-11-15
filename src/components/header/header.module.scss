@@ -1,9 +1,11 @@
 .header {
-  height: 171px;
+  height: 115px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1240px;
+  width: 100%;
+  max-width: 1240px;
+  padding: 0 30px;
   img {
     height: 62.26px;
   }

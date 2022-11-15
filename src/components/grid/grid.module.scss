@@ -1,23 +1,19 @@
-@use '../../../partials/utils/mixins.scss' as *;
+@use '../../../partials/utils/mixins' as *;
 
 .grid {
   background: #f6f6f6;
-  padding: 50px 25px;
-  padding-bottom: 250px;
-  border-radius: 25px;
-  margin: auto;
-  margin-top: 43px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
   gap: 50px;
+  border-radius: 25px;
+ justify-content: center;
   * {
     justify-self: center;
-  }
-  @include tablet {
-    grid-template-columns: repeat(2, 1fr);
+    flex-grow: 1;
   }
   @include mobile {
-    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
   }
 }
 .error {
