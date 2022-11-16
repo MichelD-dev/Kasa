@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Kasa
 
-## Available Scripts
+#### Location d’appartements entre particuliers en France.
 
-In the project directory, you can run:
+#### Formation OpenClassrooms - Développeur d'applications JavaScript React
+#### Projet 11
 
-### `yarn start`
+Ce projet, visible sur la branche [Develop](https://github.com/MichelD-dev/Kasa/tree/develop), a d'abord été créé en tirant parti des dernières nouveautés apparues avec React Router v6.4:
+- <font color="lightblue">*Loader*</font> incorporé aux routes
+- <font color="lightblue">*ErrorElement*</font> pour les pages d'erreur
+- <font color="lightblue">*Defer*</font> pour retourner une promesse depuis le *loader*
+- Les composants <font color="lightblue">*Await*</font> permettant de résoudre cette promesse avant d'en envoyer le resultat à un composant via un <font color="lightblue">*render prop*</font>
+- <font color="lightblue">*useAsyncValue*</font> retourne également la valeur issue de la promesse venant du *loader* et permet de l'utiliser dans le composant enfant d'un *Await*
+- <font color="lightblue">*Suspense*</font>, fourni par React 18, permet d'utiliser les fonctions précédentes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Il utilise également certains patterns comme les <font color="lightblue">*composants composés*</font> pour les accordéons, associés à un <font color="lightblue">*Contexte*</font>, et fait usage du code-splitting via <font color="lightblue">*React.Lazy*</font> et <font color="lightblue">*Webpack Prefetch*</font>.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Vous trouverez sur la branche [Legacy_router](https://github.com/MichelD-dev/Kasa/tree/Legacy_router) une version de base n'utilisant pas ou peu ces optimisations, à part les <font color="lightblue">*composants composés*</font> et le <font color="lightblue">*Contexte*</font>.
 
-### `yarn test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In order to make the application works on your engine you must have NodeJS and
+npm installed.
 
-### `yarn build`
+## Installation
+****
+1. Clone this repository (or download a zip file):
+   `git clone https://github.com/MichelD-dev/Kasa`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Go to the projet root folder `cd kasa`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install the dependencies: `yarn install` or `npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. (Optional) Configure the application inside the `.env.local` file
 
-### `yarn eject`
+5. Launch the application: `yarn start` or `npm run start`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contact:
+Michel DELAUNAY - delaunaymichel@hotmail.fr  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Project Link: https://github.com/MichelD-dev/Kasa

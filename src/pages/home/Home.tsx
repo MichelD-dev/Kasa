@@ -9,10 +9,10 @@ const Home = () => {
     'lodgings',
   )
 
-  const punchlineText = 'Chez vous, partout et ailleurs'
+  const PUNCHLINE_TEXT = 'Chez vous, partout et ailleurs'
 
   const punchline = () => {
-    const text = punchlineText.split(', ')
+    const text = PUNCHLINE_TEXT.split(', ')
 
     return (
       <>
