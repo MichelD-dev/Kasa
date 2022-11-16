@@ -2,20 +2,20 @@ import {useMemo} from 'react'
 import Card from '../card/Card'
 import styles from './grid.module.scss'
 
-const Grid = ({lodgings}: LodgingsType) => {
+const Grid = (data: LodgingsType) => {
   return (
     <section className={styles.grid}>
       {useMemo(() => {
-        return lodgings.length ? (
-          lodgings.map(lodging => (
+        return data.data?.length ? (
+          data.data.map((lodging: LodgingType) => (
             <div key={lodging.id}>
               <Card lodging={lodging} />
             </div>
           ))
         ) : (
-          <p>No lodgings</p>
+          <p className={styles.error}  >Pas d'appartements trouvés</p>
         )
-      }, [lodgings])}
+      }, [data])}
     </section>
   )
 }

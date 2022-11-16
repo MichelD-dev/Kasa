@@ -1,14 +1,49 @@
-const loader = async (url: string, element = ''): Promise<LodgingsType> => {
-  const response = await fetch(url)
+import {useEffect, useState} from 'react'
 
-  if (!response.ok) {
-    throw new Response(`Failed to fetch ${element}`, {status: 500})
-  }
-  if (response.status === 404) {
-    throw new Response('Not Found', {status: 404})
-  }
+const useFetch = (url: string, element = '') => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [data, setData] = useState([])
+  const [error, setError] = useState('')
 
-  return response.json()
+  useEffect(() => {
+    const controller = new AbortController()
+    const signal = controller.signal
+
+    const fetchData = async () => {
+      try {
+        setIsLoading(true)
+
+        const response = await fetch(url, {signal})
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch ${element}`)
+        }
+        if (response.status === 404) {
+          throw new Error('Not Found')
+        }
+
+        setData(await response.json())
+
+        return () => {
+          setIsLoading(false)
+        }
+      } catch (err) {
+        let message
+        if (err instanceof Error) message = err.message
+        else message = String(error)
+        setError(message)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    fetchData()
+
+    return () => {
+      controller.abort()
+    }
+  }, [element, error, url])
+
+  return {data, error, isLoading}
 }
 
-export default loader
+export default useFetch

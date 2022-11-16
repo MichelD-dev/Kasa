@@ -12,7 +12,13 @@ interface LodgingType {
 }
 
 interface LodgingsType {
-  lodgings: LodgingType[]
+  data: LodgingType[] | null
+}
+
+interface JSONResponseType {
+  data: LodgingType[] | null
+  isLoading: boolean
+  error: string
 }
 
 interface BannerProps {
