@@ -1,6 +1,19 @@
-import {useEffect, useState} from 'react'
+import {useCallback, useEffect, useState} from 'react'
 
 const useFetch = (url: string, element = '') => {
+  const cb = useCallback(
+    (signal: AbortSignal) => {
+      return fetch(url, {signal})
+    },
+    [url],
+  )
+  return useCallbackFetch(cb, element)
+}
+
+const useCallbackFetch = (
+  callback: (signal: AbortSignal) => Promise<Response>,
+  element: string,
+) => {
   const [isLoading, setIsLoading] = useState(false)
   const [data, setData] = useState([])
   const [error, setError] = useState('')
@@ -13,7 +26,7 @@ const useFetch = (url: string, element = '') => {
       try {
         setIsLoading(true)
 
-        const response = await fetch(url, {signal})
+        const response = await callback(signal)
 
         if (!response.ok) {
           throw new Error(`Failed to fetch ${element}`)
@@ -41,7 +54,7 @@ const useFetch = (url: string, element = '') => {
     return () => {
       controller.abort()
     }
-  }, [element, error, url])
+  }, [callback, element, error])
 
   return {data, error, isLoading}
 }

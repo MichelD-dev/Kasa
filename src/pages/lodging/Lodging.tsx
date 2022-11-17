@@ -21,7 +21,7 @@ const Lodging = () => {
   return (
     <>
       {isLoading && <p>Loading...</p>}
-      {(!data || data?.length === 0 || !lodging) && (
+      {data?.length !== 0 && !lodging && (
         <Navigate to="/error404" replace={true} />
       )}
       {lodging && (

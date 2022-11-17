@@ -6,8 +6,8 @@
 
 #### Formation OpenClassrooms - Développeur d'applications JavaScript React
 #### Projet 11
-
-Ce projet, visible sur la branche [Develop](https://github.com/MichelD-dev/Kasa/tree/develop), a d'abord été créé en tirant parti des dernières nouveautés apparues avec React Router v6.4:
+****
+Ce projet, visible sur la branche [Optimized](https://github.com/MichelD-dev/Kasa/tree/Optimized), a d'abord été créé en tirant parti des dernières nouveautés apparues avec React Router v6.4:
 - <font color="lightblue">*Loader*</font> incorporé aux routes
 - <font color="lightblue">*ErrorElement*</font> pour les pages d'erreur
 - <font color="lightblue">*Defer*</font> pour retourner une promesse depuis le *loader*
@@ -15,9 +15,9 @@ Ce projet, visible sur la branche [Develop](https://github.com/MichelD-dev/Kasa/
 - <font color="lightblue">*useAsyncValue*</font> retourne également la valeur issue de la promesse venant du *loader* et permet de l'utiliser dans le composant enfant d'un *Await*
 - <font color="lightblue">*Suspense*</font>, fourni par React 18, permet d'utiliser les fonctions précédentes
 
-Il utilise également certains patterns comme les <font color="lightblue">*composants composés*</font> pour les accordéons, associés à un <font color="lightblue">*Contexte*</font>, et fait usage du code-splitting via <font color="lightblue">*React.Lazy*</font> et <font color="lightblue">*Webpack Prefetch*</font>.
+Il utilise également certains patterns comme les <font color="lightblue">*composants composés*</font> pour les accordéons, associés à un <font color="lightblue">*Contexte*</font>, et **fait** usage du code-splitting via <font color="lightblue">*React.Lazy*</font> et <font color="lightblue">*Webpack Prefetch*</font>.
 
-Vous trouverez sur la branche [Legacy_router](https://github.com/MichelD-dev/Kasa/tree/Legacy_router) une version de base n'utilisant pas ou peu ces optimisations, à part les <font color="lightblue">*composants composés*</font> et le <font color="lightblue">*Contexte*</font>.
+Vous trouverez sur la branche par défaut [main](https://github.com/MichelD-dev/Kasa) une version de base n'utilisant pas ou peu ces optimisations, à part les <font color="lightblue">*composants composés*</font> et le <font color="lightblue">*Contexte*</font>.
 
 ## Prerequisites
 
