@@ -19,10 +19,14 @@ Il utilise également certains patterns comme les <font color="lightblue">*compo
 
 Vous trouverez sur la branche par défaut [main](https://github.com/MichelD-dev/Kasa) une version de base n'utilisant pas ou peu ces optimisations, à part les <font color="lightblue">*composants composés*</font> et le <font color="lightblue">*Contexte*</font>.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Prerequisites
 
 In order to make the application works on your engine you must have NodeJS and
 npm installed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Installation
 ****
@@ -37,7 +41,11 @@ npm installed.
 
 5. Launch the application: `yarn start` or `npm run start`
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Contact:
 Michel DELAUNAY - delaunaymichel@hotmail.fr  
 
 Project Link: https://github.com/MichelD-dev/Kasa
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
