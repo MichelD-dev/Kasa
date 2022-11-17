@@ -16,12 +16,12 @@ const Lodging = () => {
   )
   const {id} = useParams()
 
-  const lodging = data?.find(obj => obj.id === id)
+  const lodging = data.find(obj => obj.id === id)
 
   return (
     <>
-      {isLoading && <p>Loading...</p>}
-      {data?.length !== 0 && !lodging && (
+      {isLoading && <p className={styles.loadingText}>Loading...</p>}
+      {data.length !== 0 && !lodging && (
         <Navigate to="/error404" replace={true} />
       )}
       {lodging && (

@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <>
       <Banner bannerImgURL="media/home-banner.jpg" punchline={punchline()} />
-      {isLoading && <p className={styles.loadingText}>Loading...</p>}
+      {isLoading && !error && <p className={styles.loadingText}>Loading...</p>}
       {data && data.length !== 0 && <Grid data={data} />}
       {error && <p className={styles.loadingText}>{error}</p>}
     </>
