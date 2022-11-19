@@ -9,11 +9,12 @@
   position: relative;
   transition: all 0.3s linear;
   transform: scale(1);
-  // opacity: 0;
-  // transition: opacity 150ms ease-in;
   @media only screen and (max-width: 860px) {
     flex-grow: 1;
     height: 450px;
+  }
+  @include mobile {
+    border-radius: 18px;
   }
   &:hover,
   &:focus {
@@ -42,6 +43,9 @@
     color: white;
     padding: 20px 15px;
     background: rgba(0, 0, 0, 0.3);
+    @include mobile {
+    font-size: 1.3rem;
+    }
   }
 }
 .fadein {

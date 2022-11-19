@@ -1,4 +1,5 @@
 @use '../../../partials/utils/variables' as *;
+@use '../../../partials/utils/mixins' as *;
 
 .navbar {
   ul {
@@ -11,6 +12,9 @@
   .link {
     &:last-child {
       margin-left: 57px;
+      @include mobile {
+        margin-left: 40px;
+      }
     }
     a {
       color: $primary-color;
