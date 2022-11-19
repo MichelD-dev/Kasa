@@ -6,7 +6,7 @@ import styles from './about.module.scss'
 
 const About = () => (
   <section className={styles.section}>
-    <Banner bannerImgURL="media/about-banner.jpg" />
+    <Banner bannerImgURL="./media/about-banner.jpg" />
     <Collapse id="1">
       <CollapseToggle>Fiabilité</CollapseToggle>
       <CollapsePanel>

@@ -46,6 +46,6 @@ npm installed.
 ## Contact:
 Michel DELAUNAY - delaunaymichel@hotmail.fr  
 
-Project Link: https://github.com/MichelD-dev/Kasa
+Project Link: https://kasa-lodgings.netlify.app/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

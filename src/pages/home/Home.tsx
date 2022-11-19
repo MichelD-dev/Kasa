@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <>
-      <Banner bannerImgURL="media/home-banner.jpg" punchline={punchline()} />
+      <Banner bannerImgURL="./media/home-banner.jpg" punchline={punchline()} />
       <Suspense
         fallback={
           <section className={styles.loadingText}>

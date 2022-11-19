@@ -6,10 +6,14 @@ const sleep = (ms: number): Promise<() => void> => {
 }
 
 const fetchData = async (url: string, element = ''): Promise<LodgingType[]> => {
-  
+
   // await sleep(1200) // On simule ici un serveur qui tarde à envoyer ses données
 
-  const response = await fetch(url)
+  const response = await fetch(url, {
+    headers: {
+      Accept: 'application/json',
+    },
+  })
 
   if (!response.ok) {
     throw new Response(`Failed to fetch ${element}`, {status: 500})
