@@ -1,3 +1,5 @@
+@use '../../../partials/utils/mixins' as *;
+
 .containerSlider {
   max-width: 100%;
   height: 415px;
@@ -7,6 +9,9 @@
   flex-direction: column;
   align-items: center;
   border-radius: 25px;
+  @include mobile {
+    border-radius: 18px;
+  }
 }
 
 .slide {
@@ -30,7 +35,7 @@
 .btnSlide {
   width: 80px;
   height: 60px;
-  opacity: .8;
+  opacity: 0.8;
   background: transparent;
   border: none;
   position: absolute;
@@ -38,6 +43,9 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  @include mobile {
+    width: 20px;
+  }
 }
 
 .prev {

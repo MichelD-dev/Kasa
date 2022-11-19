@@ -57,6 +57,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @include mobile {
+      border-radius: 8px;
+    }
   }
 }
 
@@ -64,6 +67,10 @@
   display: flex;
   justify-content: space-between;
   gap: 76px;
+  @include mobile {
+    flex-direction: column;
+    gap: 0px;
+  }
 }
 
 .host {

@@ -13,6 +13,9 @@
     flex-grow: 1;
     height: 450px;
   }
+  @include mobile {
+    border-radius: 18px;
+  }
   &:hover,
   &:focus {
     transition: all 0.1s linear;
@@ -40,6 +43,9 @@
     color: white;
     padding: 20px 15px;
     background: rgba(0, 0, 0, 0.3);
+    @include mobile {
+    font-size: 1.3rem;
+    }
   }
 }
 
