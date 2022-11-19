@@ -1,19 +1,24 @@
 import {useCallback, useEffect, useState} from 'react'
 
 const useFetch = (url: string, element = '') => {
-    const cb = useCallback(
-      (signal: AbortSignal) => {
-        return fetch(url, {signal})
-      },
-      [url],
-    )
-    return useCallbackFetch(cb, element)
-  }
+  const cb = useCallback(
+    (signal: AbortSignal) => {
+      return fetch(url, {
+        signal,
+        headers: {
+          Accept: 'application/json',
+        },
+      })
+    },
+    [url],
+  )
+  return useCallbackFetch(cb, element)
+}
 
-  const useCallbackFetch = (
-    callback: (signal: AbortSignal) => Promise<Response>,
-    element: string,
-  ) => {
+const useCallbackFetch = (
+  callback: (signal: AbortSignal) => Promise<Response>,
+  element: string,
+) => {
   const [isLoading, setIsLoading] = useState(false)
   const [data, setData] = useState([])
   const [error, setError] = useState('')
