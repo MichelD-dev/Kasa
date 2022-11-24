@@ -11,7 +11,9 @@ const Carrousel = ({lodging}: {lodging: LodgingType}) => {
       : setSlideIndex(1)
   }
   const prevSlide = () => {
-    setSlideIndex(slideIndex !== 1 ? 1 : lodging.pictures.length)
+    slideIndex !== 1
+      ? setSlideIndex(slideIndex => slideIndex - 1)
+      : setSlideIndex(lodging.pictures.length)
   }
 
   return (
